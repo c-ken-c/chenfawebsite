@@ -229,6 +229,13 @@ nav ul li a:hover {
     flex-direction: column; /* Stack image and text */
     align-items: center; /* Center content horizontally */
     text-align: center; /* Center text within the item */
+    /* 新增浮動特效 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projects .project-item:hover {
+    transform: translateY(-5px); /* 向上浮動 */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* 加深陰影 */
 }
 
 #projects .project-item img {
@@ -268,6 +275,13 @@ nav ul li a:hover {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     text-align: center;
     padding-bottom: 15px;
+    /* 新增浮動特效 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gallery figure:hover {
+    transform: translateY(-5px); /* 向上浮動 */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* 加深陰影 */
 }
 
 #gallery figure img {
