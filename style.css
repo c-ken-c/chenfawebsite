@@ -139,24 +139,40 @@ nav ul li a:hover {
 }
 
 /* About Section */
-#about .about-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: center;
-    justify-content: center; /* Center content when wrapped */
+#about .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Three columns, responsive */
+    gap: 30px;
+    margin-bottom: 40px; /* Space before the image */
 }
 
-#about .about-text {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px; /* Limit text width */
+#about .about-column {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-top: 5px solid #007bff;
+}
+
+#about .about-column h3 {
+    text-align: left;
+    color: #004080;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#about .about-column ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#about .about-column p {
+    margin-bottom: 0; /* Remove extra margin for paragraphs */
 }
 
 #about .about-image {
-    flex: 1;
-    min-width: 300px;
     text-align: center;
+    margin-top: 20px;
 }
 
 #about .about-image img {
@@ -164,15 +180,6 @@ nav ul li a:hover {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-#about ul {
-    list-style: disc;
-    margin-left: 20px;
-}
-
-#about ul li {
-    margin-bottom: 10px;
 }
 
 /* Services Section */
@@ -206,21 +213,23 @@ nav ul li a:hover {
 }
 
 /* Projects Section */
-#projects .projects-list ul {
-    list-style: none;
-    padding: 0;
+#projects .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 4 columns like gallery */
+    gap: 20px; /* Space between project items */
 }
 
-#projects .projects-list ul li {
+#projects .project-item {
     background-color: #fff;
-    padding: 15px 20px;
-    margin-bottom: 15px;
+    padding: 20px;
     border-left: 5px solid #007bff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     border-radius: 4px;
+    display: flex; /* Use flex to align content within item */
+    align-items: center; /* Vertically center content */
 }
 
-#projects .projects-list ul li strong {
+#projects .project-item strong {
     color: #004080;
 }
 
@@ -269,6 +278,10 @@ nav ul li a:hover {
     background-color: #e6f2ff; /* Light blue background */
 }
 
+#contact h2 {
+    margin-bottom: 40px;
+}
+
 #contact .contact-grid {
     display: flex; /* Use flexbox for columns */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -278,6 +291,7 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     background-color: #fff; /* White background for the grid itself */
+    align-items: flex-start; /* Align columns to the top */
 }
 
 #contact .contact-column {
@@ -292,11 +306,12 @@ nav ul li a:hover {
     margin-top: 0;
     margin-bottom: 20px;
     color: #004080;
+    font-size: 1.2em; /* Adjust to ensure similar size to other text, or remove if not needed */
 }
 
 #contact .contact-column p {
-    margin-bottom: 10px;
-    font-size: 1.1em;
+    margin-bottom: 8px; /* Slightly less margin for tighter spacing */
+    font-size: 0.9em; /* Reduced by approximately 2 points from 1.1em, assuming default is 16px */
 }
 
 #contact .contact-column strong {
@@ -333,8 +348,8 @@ footer {
         font-size: 2em;
     }
 
-    #about .about-content {
-        flex-direction: column;
+    #about .about-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
     }
 
     #about .about-image {
@@ -343,6 +358,10 @@ footer {
 
     #services .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    #projects .projects-grid {
+        grid-template-columns: 1fr; /* Stack on small screens */
     }
 
     #contact .contact-grid {
