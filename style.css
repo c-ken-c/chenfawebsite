@@ -226,7 +226,18 @@ nav ul li a:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     border-radius: 4px;
     display: flex; /* Use flex to align content within item */
-    align-items: center; /* Vertically center content */
+    flex-direction: column; /* Stack image and text */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the item */
+}
+
+#projects .project-item img {
+    max-width: 100%;
+    height: 100px; /* Fixed height for consistent image size */
+    object-fit: contain; /* Ensure image content is fully visible */
+    margin-bottom: 10px; /* Space between image and text */
+    border: 1px solid #eee; /* Light border for image placeholders */
+    border-radius: 4px;
 }
 
 #projects .project-item strong {
