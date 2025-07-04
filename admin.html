@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>辰發後台管理</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+    .hidden { display: none; }
+    form { background: #fff; padding: 20px; margin-top: 20px; border-radius: 8px; }
+    label { display: block; margin: 10px 0 5px; }
+    input, textarea, select { width: 100%; padding: 8px; box-sizing: border-box; }
+    button { padding: 10px 20px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>辰發網站後台</h1>
+
+  <div id="loginArea">
+    <label>請輸入密碼：</label>
+    <input type="password" id="pwd">
+    <button id="loginBtn">登入</button>
+    <p id="loginMsg" style="color: red;"></p>
+  </div>
+
+  <div id="adminArea" class="hidden">
+    <button id="logoutBtn">登出</button>
+
+    <h2>新增資料</h2>
+    <label>選擇分類：</label>
+    <select id="kind">
+      <option value="工程實績">工程實績</option>
+      <option value="設備圖片">設備圖片</option>
+    </select>
+
+    <form id="dataForm">
+      <div id="fields"></div>
+      <button type="submit">送出</button>
+    </form>
+    <p id="resultMsg"></p>
+  </div>
+
+  <script>
+    const pwd = "chenfa168";
+    const apiUrl = "https://script.google.com/macros/s/AKfycbyO30zO98IAJxenP_Eob3W5xmiXqVOXxRDlcCGvxoWlujHUDd5ZVJbcfTCzxaBInHK3/exec";
+
+    const loginArea = document.getElementById("loginArea");
+    const adminArea = document.getElementById("adminArea");
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const loginMsg = document.getElementById("loginMsg");
+
+    const kindSelect = document.getElementById("kind");
+    const fieldsDiv = document.getElementById("fields");
+    const dataForm = document.getElementById("dataForm");
+    const resultMsg = document.getElementById("resultMsg");
+
+    function showFields() {
+      const kind = kindSelect.value;
+      let html = '';
+      if (kind === '工程實績') {
+        html += '<label>標題</label><input name="title" required>';
+        html += '<label>內容</label><textarea name="content" required></textarea>';
+        html += '<label>圖片網址</label><input name="image" required>';
+        html += '<label>日期 (YYYY-MM-DD)</label><input name="date" type="date" required>';
+      } else {
+        html += '<label>標題</label><input name="title" required>';
+        html += '<label>圖片網址</label><input name="image" required>';
+        html += '<label>說明</label><textarea name="content" required></textarea>';
+      }
+      fieldsDiv.innerHTML = html;
+    }
+
+    loginBtn.addEventListener("click", () => {
+      if (document.getElementById("pwd").value === pwd) {
+        loginArea.classList.add("hidden");
+        adminArea.classList.remove("hidden");
+        showFields();
+      } else {
+        loginMsg.textContent = "密碼錯誤";
+      }
+    });
+
+    logoutBtn.addEventListener("click", () => {
+      adminArea.classList.add("hidden");
+      loginArea.classList.remove("hidden");
+      document.getElementById("pwd").value = "";
+    });
+
+    kindSelect.addEventListener("change", showFields);
+
+    dataForm.addEventListener("submit", async e => {
+      e.preventDefault();
+      const form = new FormData(dataForm);
+      const payload = {
+        title: form.get("title"),
+        content: form.get("content") || "",
+        image: form.get("image"),
+        date: form.get("date") || "",
+      };
+      const sheet = kindSelect.value;
+      resultMsg.textContent = "送出中…";
+      try {
+        const res = await fetch(apiUrl + "?sheet=" + encodeURIComponent(sheet), {
+          method: "POST",
+          body: JSON.stringify(payload)
+        });
+        const txt = await res.text();
+        resultMsg.textContent = txt === "Success" ? "上架成功！" : "發生錯誤：" + txt;
+        dataForm.reset();
+        showFields();
+      } catch (err) {
+        resultMsg.textContent = "網路錯誤：" + err;
+      }
+    });
+  </script>
+</body>
+</html>
