@@ -384,9 +384,10 @@
       submitText.classList.add('hidden');
       submitLoading.classList.remove('hidden');
       dataForm.querySelector('button[type="submit"]').disabled = true;
-      
+     
       try {
         const formData = new FormData(dataForm);
+        const sheet = kindSelect.value; // 這行要寫在 payload 上面
         const payload = {
         sheet: sheet,  // ← 新增這一行
         title: formData.get("title")?.trim() || "",
@@ -395,8 +396,6 @@
         date: formData.get("date") || ""
         };
 
-        
-        const sheet = kindSelect.value;
         const url = CONFIG.apiUrl; // 直接使用，不要帶參數
         
         const response = await fetch(url, {
