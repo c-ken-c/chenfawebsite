@@ -357,8 +357,10 @@ function setLoading(isLoading) {
 }
 
 // 事件監聽器
-elements.loginBtn.addEventListener("click", () => {
+elements.loginBtn.addEventListener("click", function() {
+  console.log("登入按鈕被點擊");
   const password = elements.pwdInput.value;
+  console.log("輸入的密碼:", password);
   
   if (!password) {
     showMessage(elements.loginMsg, "請輸入密碼", 'error');
@@ -366,12 +368,14 @@ elements.loginBtn.addEventListener("click", () => {
   }
   
   if (password === CONFIG.password) {
+    console.log("密碼正確，顯示管理區域");
     elements.loginArea.classList.add("hidden");
     elements.adminArea.classList.remove("hidden");
     elements.pwdInput.value = "";
     generateFields();
     showMessage(elements.resultMsg, "登入成功！歡迎使用後台管理系統", 'success');
   } else {
+    console.log("密碼錯誤");
     showMessage(elements.loginMsg, "密碼錯誤，請重新輸入", 'error');
     elements.pwdInput.focus();
   }
@@ -388,8 +392,9 @@ elements.logoutBtn.addEventListener("click", () => {
 });
 
 // 按Enter鍵登入
-elements.pwdInput.addEventListener("keypress", (e) => {
+elements.pwdInput.addEventListener("keypress", function(e) {
   if (e.key === "Enter") {
+    console.log("Enter鍵被按下");
     elements.loginBtn.click();
   }
 });
@@ -444,7 +449,18 @@ elements.dataForm.addEventListener("submit", async (e) => {
   }
 });
 
-// 初始化
+// 初始化和調試
+console.log("頁面載入完成");
+console.log("登入按鈕元素:", elements.loginBtn);
+console.log("密碼輸入框元素:", elements.pwdInput);
+console.log("設定的密碼:", CONFIG.password);
+
+// 確保所有元素都已載入
+if (!elements.loginBtn || !elements.pwdInput) {
+  console.error("找不到必要的HTML元素");
+  alert("頁面載入錯誤，請重新整理頁面");
+}
+
 generateFields();
 ```
 
