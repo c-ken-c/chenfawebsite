@@ -1,117 +1,453 @@
 <!DOCTYPE html>
+
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>辰發後台管理</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
-    .hidden { display: none; }
-    form { background: #fff; padding: 20px; margin-top: 20px; border-radius: 8px; }
-    label { display: block; margin: 10px 0 5px; }
-    input, textarea, select { width: 100%; padding: 8px; box-sizing: border-box; }
-    button { padding: 10px 20px; margin-top: 10px; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+```
+body { 
+  font-family: 'Microsoft YaHei', Arial, sans-serif; 
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+}
+
+.hidden { 
+  display: none; 
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.login-form {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label { 
+  display: block; 
+  margin-bottom: 8px; 
+  font-weight: 600;
+  color: #555;
+}
+
+input, textarea, select { 
+  width: 100%; 
+  padding: 12px; 
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+  text-transform: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+  margin-right: 10px;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+  width: 100%;
+}
+
+.btn-success:hover {
+  background: #218838;
+}
+
+.alert {
+  padding: 12px;
+  border-radius: 5px;
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-info {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.category-select {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .admin-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+```
+
   </style>
 </head>
 <body>
-  <h1>辰發網站後台</h1>
+  <div class="container">
+    <h1>辰發網站後台</h1>
 
-  <div id="loginArea">
-    <label>請輸入密碼：</label>
-    <input type="password" id="pwd">
-    <button id="loginBtn">登入</button>
-    <p id="loginMsg" style="color: red;"></p>
+```
+<div id="loginArea">
+  <div class="login-form">
+    <div class="form-group">
+      <label for="pwd">管理員密碼：</label>
+      <input type="password" id="pwd" placeholder="請輸入管理員密碼">
+    </div>
+    <button id="loginBtn" class="btn btn-primary">登入管理</button>
+    <div id="loginMsg"></div>
+  </div>
+</div>
+
+<div id="adminArea" class="hidden">
+  <div class="admin-header">
+    <h2>資料管理</h2>
+    <button id="logoutBtn" class="btn btn-secondary">登出</button>
   </div>
 
-  <div id="adminArea" class="hidden">
-    <button id="logoutBtn">登出</button>
+  <div class="category-select">
+    <div class="form-group">
+      <label for="kind">選擇資料分類：</label>
+      <select id="kind">
+        <option value="工程實績">工程實績</option>
+        <option value="設備圖片">設備圖片</option>
+      </select>
+    </div>
+  </div>
 
-    <h2>新增資料</h2>
-    <label>選擇分類：</label>
-    <select id="kind">
-      <option value="工程實績">工程實績</option>
-      <option value="設備圖片">設備圖片</option>
-    </select>
+  <form id="dataForm">
+    <div id="fields"></div>
+    <button type="submit" class="btn btn-success">
+      <span id="submitText">提交資料</span>
+      <span id="submitLoading" class="hidden">
+        <span class="loading"></span>處理中...
+      </span>
+    </button>
+  </form>
+  
+  <div id="resultMsg"></div>
+</div>
+```
 
-    <form id="dataForm">
-      <div id="fields"></div>
-      <button type="submit">送出</button>
-    </form>
-    <p id="resultMsg"></p>
   </div>
 
   <script>
-    const pwd = "chenfa168";
-    const apiUrl = "https://script.google.com/macros/s/AKfycbyO30zO98IAJxenP_Eob3W5xmiXqVOXxRDlcCGvxoWlujHUDd5ZVJbcfTCzxaBInHK3/exec";
+    const CONFIG = {
+      password: "chenfa168",
+      apiUrl: "https://script.google.com/macros/s/AKfycbwHyXi6XBW9aEuMWnOsxuRonf-xCYPWiKkaBwBKg2l60ZqU3HpCReOBf-0QVxWM3_NI/exec"
+    };
 
-    const loginArea = document.getElementById("loginArea");
-    const adminArea = document.getElementById("adminArea");
-    const loginBtn = document.getElementById("loginBtn");
-    const logoutBtn = document.getElementById("logoutBtn");
-    const loginMsg = document.getElementById("loginMsg");
+    const elements = {
+      loginArea: document.getElementById("loginArea"),
+      adminArea: document.getElementById("adminArea"),
+      loginBtn: document.getElementById("loginBtn"),
+      logoutBtn: document.getElementById("logoutBtn"),
+      loginMsg: document.getElementById("loginMsg"),
+      kindSelect: document.getElementById("kind"),
+      fieldsDiv: document.getElementById("fields"),
+      dataForm: document.getElementById("dataForm"),
+      resultMsg: document.getElementById("resultMsg"),
+      submitText: document.getElementById("submitText"),
+      submitLoading: document.getElementById("submitLoading"),
+      pwdInput: document.getElementById("pwd")
+    };
 
-    const kindSelect = document.getElementById("kind");
-    const fieldsDiv = document.getElementById("fields");
-    const dataForm = document.getElementById("dataForm");
-    const resultMsg = document.getElementById("resultMsg");
-
-    function showFields() {
-      const kind = kindSelect.value;
-      let html = '';
-      if (kind === '工程實績') {
-        html += '<label>標題</label><input name="title" required>';
-        html += '<label>內容</label><textarea name="content" required></textarea>';
-        html += '<label>圖片網址</label><input name="image" required>';
-        html += '<label>日期 (YYYY-MM-DD)</label><input name="date" type="date" required>';
-      } else {
-        html += '<label>標題</label><input name="title" required>';
-        html += '<label>圖片網址</label><input name="image" required>';
-        html += '<label>說明</label><textarea name="content" required></textarea>';
+    // 顯示訊息函數
+    function showMessage(element, message, type = 'info') {
+      const alertClass = `alert alert-${type}`;
+      element.innerHTML = `<div class="${alertClass}">${message}</div>`;
+      
+      // 3秒後自動清除成功訊息
+      if (type === 'success') {
+        setTimeout(() => {
+          element.innerHTML = '';
+        }, 3000);
       }
-      fieldsDiv.innerHTML = html;
     }
 
-    loginBtn.addEventListener("click", () => {
-      if (document.getElementById("pwd").value === pwd) {
-        loginArea.classList.add("hidden");
-        adminArea.classList.remove("hidden");
-        showFields();
-      } else {
-        loginMsg.textContent = "密碼錯誤";
-      }
-    });
+    // 生成表單欄位
+    function generateFields() {
+      const category = elements.kindSelect.value;
+      let html = '';
+      
+      if (category === '工程實績') {
+        html = `
+          <div class="form-group">
+            <label for="title">專案標題 *</label>
+            <input name="title" id="title" required placeholder="請輸入工程專案標題">
+          </div>
+          <div class="form-group">
+            <label for="content">專案內容 *</label>
+            <textarea name="content" id="content" required placeholder="請描述工程專案的詳細內容"></textarea>
 
-    logoutBtn.addEventListener("click", () => {
-      adminArea.classList.add("hidden");
-      loginArea.classList.remove("hidden");
-      document.getElementById("pwd").value = "";
-    });
+```
+      </div>
+      <div class="form-group">
+        <label for="image">專案圖片網址 *</label>
+        <input name="image" id="image" required placeholder="https://example.com/image.jpg">
+      </div>
+      <div class="form-group">
+        <label for="date">完工日期 *</label>
+        <input name="date" id="date" type="date" required>
+      </div>
+    `;
+  } else if (category === '設備圖片') {
+    html = `
+      <div class="form-group">
+        <label for="title">設備名稱 *</label>
+        <input name="title" id="title" required placeholder="請輸入設備名稱">
+      </div>
+      <div class="form-group">
+        <label for="image">設備圖片網址 *</label>
+        <input name="image" id="image" required placeholder="https://example.com/image.jpg">
+      </div>
+      <div class="form-group">
+        <label for="content">設備說明</label>
+        <textarea name="content" id="content" placeholder="請描述設備的功能與特色"></textarea>
+      </div>
+    `;
+  }
+  
+  elements.fieldsDiv.innerHTML = html;
+}
 
-    kindSelect.addEventListener("change", showFields);
+// 驗證表單
+function validateForm() {
+  const requiredFields = elements.dataForm.querySelectorAll('[required]');
+  let isValid = true;
+  
+  requiredFields.forEach(field => {
+    if (!field.value.trim()) {
+      field.style.borderColor = '#dc3545';
+      isValid = false;
+    } else {
+      field.style.borderColor = '#ddd';
+    }
+  });
+  
+  return isValid;
+}
 
-    dataForm.addEventListener("submit", async e => {
-      e.preventDefault();
-      const form = new FormData(dataForm);
-      const payload = {
-        title: form.get("title"),
-        content: form.get("content") || "",
-        image: form.get("image"),
-        date: form.get("date") || "",
-      };
-      const sheet = kindSelect.value;
-      resultMsg.textContent = "送出中…";
-      try {
-        const res = await fetch(apiUrl + "?sheet=" + encodeURIComponent(sheet), {
-          method: "POST",
-          body: JSON.stringify(payload)
-        });
-        const txt = await res.text();
-        resultMsg.textContent = txt === "Success" ? "上架成功！" : "發生錯誤：" + txt;
-        dataForm.reset();
-        showFields();
-      } catch (err) {
-        resultMsg.textContent = "網路錯誤：" + err;
-      }
+// 設置載入狀態
+function setLoading(isLoading) {
+  if (isLoading) {
+    elements.submitText.classList.add('hidden');
+    elements.submitLoading.classList.remove('hidden');
+    elements.dataForm.querySelector('button[type="submit"]').disabled = true;
+  } else {
+    elements.submitText.classList.remove('hidden');
+    elements.submitLoading.classList.add('hidden');
+    elements.dataForm.querySelector('button[type="submit"]').disabled = false;
+  }
+}
+
+// 事件監聽器
+elements.loginBtn.addEventListener("click", () => {
+  const password = elements.pwdInput.value;
+  
+  if (!password) {
+    showMessage(elements.loginMsg, "請輸入密碼", 'error');
+    return;
+  }
+  
+  if (password === CONFIG.password) {
+    elements.loginArea.classList.add("hidden");
+    elements.adminArea.classList.remove("hidden");
+    elements.pwdInput.value = "";
+    generateFields();
+    showMessage(elements.resultMsg, "登入成功！歡迎使用後台管理系統", 'success');
+  } else {
+    showMessage(elements.loginMsg, "密碼錯誤，請重新輸入", 'error');
+    elements.pwdInput.focus();
+  }
+});
+
+elements.logoutBtn.addEventListener("click", () => {
+  if (confirm("確定要登出嗎？")) {
+    elements.adminArea.classList.add("hidden");
+    elements.loginArea.classList.remove("hidden");
+    elements.pwdInput.value = "";
+    elements.resultMsg.innerHTML = "";
+    elements.loginMsg.innerHTML = "";
+  }
+});
+
+// 按Enter鍵登入
+elements.pwdInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    elements.loginBtn.click();
+  }
+});
+
+elements.kindSelect.addEventListener("change", generateFields);
+
+elements.dataForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  
+  if (!validateForm()) {
+    showMessage(elements.resultMsg, "請填寫所有必填欄位", 'error');
+    return;
+  }
+  
+  setLoading(true);
+  
+  try {
+    const formData = new FormData(elements.dataForm);
+    const payload = {
+      title: formData.get("title")?.trim() || "",
+      content: formData.get("content")?.trim() || "",
+      image: formData.get("image")?.trim() || "",
+      date: formData.get("date") || ""
+    };
+    
+    const sheet = elements.kindSelect.value;
+    const url = `${CONFIG.apiUrl}?sheet=${encodeURIComponent(sheet)}`;
+    
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload)
     });
+    
+    const result = await response.text();
+    
+    if (result === "Success") {
+      showMessage(elements.resultMsg, `${sheet}資料新增成功！`, 'success');
+      elements.dataForm.reset();
+      generateFields();
+    } else {
+      showMessage(elements.resultMsg, `操作失敗：${result}`, 'error');
+    }
+    
+  } catch (error) {
+    console.error('提交錯誤:', error);
+    showMessage(elements.resultMsg, `網路錯誤：${error.message}`, 'error');
+  } finally {
+    setLoading(false);
+  }
+});
+
+// 初始化
+generateFields();
+```
+
   </script>
 </body>
 </html>
