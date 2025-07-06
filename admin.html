@@ -388,14 +388,16 @@
       try {
         const formData = new FormData(dataForm);
         const payload = {
-          title: formData.get("title")?.trim() || "",
-          content: formData.get("content")?.trim() || "",
-          image: formData.get("image")?.trim() || "",
-          date: formData.get("date") || ""
+        sheet: sheet,  // ← 新增這一行
+        title: formData.get("title")?.trim() || "",
+        content: formData.get("content")?.trim() || "",
+        image: formData.get("image")?.trim() || "",
+        date: formData.get("date") || ""
         };
+
         
         const sheet = kindSelect.value;
-        const url = `${CONFIG.apiUrl}?sheet=${encodeURIComponent(sheet)}`;
+        const url = CONFIG.apiUrl; // 直接使用，不要帶參數
         
         const response = await fetch(url, {
           method: "POST",
