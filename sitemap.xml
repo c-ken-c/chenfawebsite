@@ -9,7 +9,18 @@
 
 <url>
   <loc>https://www.chenfa.tw/</loc>
-  <lastmod>2025-11-21T09:28:27+00:00</lastmod>
+  <lastmod>2025-11-28T17:50:34+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.chenfa.tw/technology.html</loc>
+  <lastmod>2025-11-28T17:50:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.chenfa.tw/index.html</loc>
+  <lastmod>2025-11-28T17:50:34+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
