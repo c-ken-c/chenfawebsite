@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="辰發企業專業水處理技術庫：涵蓋食品製造用水等級、半導體超純水(UPW)系統設計、各類工業廢水處理流程及海水淡化關鍵設備詳解。">
+    <meta name="keywords" content="辰發企業, 水處理, 純水設備, 超純水, 廢水處理, 海水淡化, 食品用水, 半導體用水, RO逆滲透, MBR, UPW">
+    <meta name="author" content="辰發企業 Chenfa Enterprise">
+    <title>水處理專業技術知識庫 | 辰發企業 Chenfa Enterprise</title>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.chenfa.tw/#organization",
+          "name": "辰發企業有限公司",
+          "url": "https://www.chenfa.tw/",
+          "logo": "https://www.chenfa.tw/logo.png",
+          "description": "專業水處理系統整合商，提供純水、廢水、海水淡化全方位解決方案。"
+        },
+        {
+          "@type": "Article",
+          "headline": "工業水處理系統設計指南：從食品純水到半導體超純水",
+          "description": "深入解析食品飲料業、電子半導體業、工業廢水處理及海水淡化的水質標準、關鍵設備清單與設計原理。",
+          "author": {
+            "@type": "Organization",
+            "name": "辰發企業"
+          },
+          "publisher": {
+            "@id": "https://www.chenfa.tw/#organization"
+          },
+          "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://github.com/c-ken-c/chenfawebsite"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "食品製造業需要什麼等級的純水設備？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "食品業視產品不同而異。飲料業需符合 CNS 12852 純水標準，需使用 RO 逆滲透、活性碳與紫外線殺菌；乳製品與保健飲品則需更高規格的無菌水或注射用水等級，需配置 EDI 及衛生級管路設計。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "半導體產業的超純水 (UPW) 系統有哪些關鍵設計？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "半導體需 E-1 等級超純水 (18.2 MΩ·cm)。關鍵設計包括雙段 RO、脫氣膜 (MD) 去除氧氣、CEDI 連續電去離子、185nm TOC 分解 UV、以及終端拋光混床與 UF 膜，且全系統需採用 PVDF 潔淨管材。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "常見的工業廢水處理設備有哪些？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "常見設備包括物理處理的加壓浮除 (DAF)、化學處理的快慢混池與 Fenton 反應塔、生物處理的 MBR (膜生物反應器) 與 MBBR，以及高階處理的 MVR 蒸發結晶器與 RO 回收系統。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #0056b3; /* 專業藍 */
+            --secondary-color: #00a8e8; /* 水藍 */
+            --accent-color: #f0f8ff; /* 淺背景 */
+            --text-color: #333;
+            --border-color: #ddd;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Heiti TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: linear-gradient(90deg, #004085 0%, #0056b3 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { opacity: 0.9; font-size: 1.2rem; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+        section {
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 2rem;
+        }
+        h3 { color: #444; margin-top: 1.5rem; }
+        
+        /* 表格樣式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        tr:nth-child(even) { background-color: var(--accent-color); }
+
+        /* 設備列表 Grid */
+        .equipment-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+        }
+        .equipment-list li {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--secondary-color);
+            transition: transform 0.2s;
+        }
+        .equipment-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .equipment-list strong { color: var(--primary-color); display: block; margin-bottom: 5px; }
+
+        /* 技術深解區塊 */
+        .tech-deep-dive {
+            background-color: #eef7ff;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+        .tech-deep-dive h4 { margin-top: 0; color: #004085; }
+        
+        /* 頁尾 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #333;
+            color: #ccc;
+            margin-top: 4rem;
+        }
+        footer a { color: var(--secondary-color); text-decoration: none; }
+        
+        /* Latex 模擬樣式 (簡單版) */
+        .formula {
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>辰發企業 水處理技術知識庫</h1>
+    <p>專注於食品、科技、廢水與海淡的高階水處理工程設計</p>
+    <p><small><a href="https://www.chenfa.tw/" style="color:white;">回官網 www.chenfa.tw</a> | <a href="https://github.com/c-ken-c/chenfawebsite" style="color:white;">GitHub Repository</a></small></p>
+</header>
+
+<div class="container">
+
+    <section id="food-industry">
+        <h2>1. 食品製造業：用水等級與系統設計</h2>
+        <p>食品業用水核心在於符合 HACCP/ISO22000 規範，重點控制微生物、餘氯與口感。</p>
+        
+        <h3>1.1 產業分類與建議水質</h3>
+        <table>
+            <thead>
+                <tr><th>產業類別</th><th>建議水質等級</th><th>關鍵指標 (Key Parameters)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>飲料 (碳酸/果汁)</td><td>純水 (Purified Water)</td><td>口感、色度、餘氯去除</td></tr>
+                <tr><td>乳製品/冰淇淋</td><td>高純水 / 無菌水</td><td>微生物、耐熱菌、硬度</td></tr>
+                <tr><td>茶飲/咖啡</td><td>軟水 / 純水</td><td>TDS (影響萃取風味)、硬度</td></tr>
+                <tr><td>雞精/保健飲品</td><td>醫療級純水 (PW)</td><td>內毒素 (Endotoxin)、TOC</td></tr>
+            </tbody>
+        </table>
+
+        <h3>1.2 關鍵設備清單 (30項精選)</h3>
+        <ul class="equipment-list">
+            <li><strong>1. 多介質過濾器 (MMF)</strong> 去除懸浮微粒，降低濁度。</li>
+            <li><strong>2. 活性碳過濾器 (ACF)</strong> 吸附異味、有機物與餘氯。</li>
+            <li><strong>3. 軟化器 (Softener)</strong> 離子交換去除鈣鎂，防結垢。</li>
+            <li><strong>4. 精密過濾器 (5µm/1µm)</strong> RO 前保安過濾。</li>
+            <li><strong>5. 板式換熱器 (PHE)</strong> 巴式殺菌前預熱或溫控。</li>
+            <li><strong>6. 逆滲透膜組 (RO)</strong> 核心脫鹽與除菌設備。</li>
+            <li><strong>7. 納濾 (NF)</strong> 保留部分礦物質 (礦泉水製程)。</li>
+            <li><strong>8. 超濾 (UF)</strong> 去除大分子與膠體。</li>
+            <li><strong>9. 脫氣塔</strong> 去除 CO₂ 減輕陰離子負荷。</li>
+            <li><strong>10. 紫外線殺菌燈 (UV 254nm)</strong> 破壞 DNA 進行物理殺菌。</li>
+            <li><strong>11. 臭氧產生機 (Ozone)</strong> 強氧化殺菌與保鮮。</li>
+            <li><strong>12. 臭氧混合塔</strong> 提高氣液混合效率。</li>
+            <li><strong>13. 終端過濾器 (0.2µm)</strong> 絕對過濾，確保無菌。</li>
+            <li><strong>14. 無菌儲水桶</strong> 316L 不鏽鋼，內拋光處理。</li>
+            <li><strong>15. 呼吸器 (Vent Filter)</strong> PTFE 疏水材質，防空氣細菌。</li>
+            <li><strong>16. CIP 清洗系統</strong> 線上化學清洗管路。</li>
+            <li><strong>17. 熱水殺菌系統</strong> 85°C 循環殺菌迴路。</li>
+            <li><strong>18. 管路靜態混合器</strong> 藥劑與水流均勻混合。</li>
+            <li><strong>19. TOC 分解 UV (185nm)</strong> 高階生技飲品用。</li>
+            <li><strong>20. 衛生級隔膜閥</strong> 無死角設計，防細菌滋生。</li>
+            <li><strong>21. 衛生級泵浦</strong> 避免潤滑油洩漏污染。</li>
+            <li><strong>22. 線上導電度計</strong> 監測水質純度。</li>
+            <li><strong>23. 流量計</strong> 衛生型電磁流量計。</li>
+            <li><strong>24. 壓力傳送器</strong> 監控濾芯壓差。</li>
+            <li><strong>25. 原水儲槽</strong> 緩衝調節水量。</li>
+            <li><strong>26. 加藥系統</strong> 添加絮凝劑或殺菌劑。</li>
+            <li><strong>27. 袋式過濾器</strong> 大流量初級過濾。</li>
+            <li><strong>28. 除鐵錳過濾器</strong> 地下水水源專用。</li>
+            <li><strong>29. 管路循環迴路</strong> 維持流速防止生物膜。</li>
+            <li><strong>30. PLC 控制盤</strong> 自動化紀錄與操作。</li>
+        </ul>
+
+        <div class="tech-deep-dive">
+            <h4>💡 技術深解：活性碳除氯原理</h4>
+            <p>利用活性碳進行化學還原反應：<span class="formula">C + 2Cl₂ + 2H₂O → 4HCl + CO₂</span>。</p>
+            <p><strong>設計計算：</strong> EBCT (空床接觸時間) 需設計 > 5-10 分鐘；線性流速 (LV) 建議 10-15 m/hr。</p>
+            <p><strong>注意事項：</strong> 需定期蒸氣消毒或熱水殺菌，避免活性碳床成為細菌溫床。</p>
+        </div>
+    </section>
+
+    <section id="tech-industry">
+        <h2>2. 科技業：超純水 (UPW) 等級與系統設計</h2>
+        <p>電子半導體業要求水質達到理論極限 (18.2 MΩ·cm)，微粒與 TOC 為管控重點。</p>
+
+        <h3>2.1 適用產業 (10類)</h3>
+        <p>半導體 (IC Foundry)、TFT-LCD 面板、PCB 印刷電路板、太陽能光電、LED、被動元件 (MLCC)、光學鏡頭、生技製藥 (WFI)、鋰電池製造、奈米材料。</p>
+
+        <h3>2.2 關鍵設備清單 (30項精選)</h3>
+        <ul class="equipment-list">
+            <li><strong>1. 盤式過濾器</strong> 預處理初級過濾。</li>
+            <li><strong>2. 超過濾 (UF)</strong> SDI < 3，保護 RO。</li>
+            <li><strong>3. 雙段逆滲透 (Double Pass RO)</strong> 高脫鹽率保障。</li>
+            <li><strong>4. 脫氣膜 (Membrane Degasser)</strong> 深層去除 O₂ (DO < 1ppb)。</li>
+            <li><strong>5. 連續電去離子 (CEDI)</strong> 取代傳統混床，綠色製程。</li>
+            <li><strong>6. 185nm TOC UV</strong> 光氧化分解微量有機物。</li>
+            <li><strong>7. 拋光混床 (Polishing Mixed Bed)</strong> 核子級樹脂，去除殘留離子。</li>
+            <li><strong>8. 終端 UF (Terminal UF)</strong> 去除熱原與微粒 (MWCO 5k)。</li>
+            <li><strong>9. PVDF 潔淨管材</strong> 無色素無添加，紅外線焊接。</li>
+            <li><strong>10. 氮氣封存系統</strong> 儲槽隔絕空氣接觸。</li>
+            <li><strong>11. 硼去除樹脂塔</strong> 針對 IC 製程去硼。</li>
+            <li><strong>12. 熱交換器</strong> 恆溫控制 25°C 穩定產水。</li>
+            <li><strong>13. 變頻器 (VFD)</strong> 恆壓供水節能。</li>
+            <li><strong>14. TOC 線上分析儀</strong> ppb 等級即時監測。</li>
+            <li><strong>15. 矽 (Silica) 分析儀</strong> 監測 SiO₂ 穿透。</li>
+            <li><strong>16. 微粒計數器</strong> 監測 0.05µm 微粒。</li>
+            <li><strong>17. 溶氧分析儀 (DO Meter)</strong> 防止晶圓氧化。</li>
+            <li><strong>18. 回收水 RO (Reclaim RO)</strong> 製程水回收再利用。</li>
+            <li><strong>19. 樹脂捕捉器</strong> 防止樹脂洩漏至後段。</li>
+            <li><strong>20. 防震軟管</strong> 避免泵浦震動影響。</li>
+            <li><strong>21. EDI 整流器</strong> 精確控制電流電壓。</li>
+            <li><strong>22. 超純水儲槽 (Lined Tank)</strong> 鐵氟龍內襯防止析出。</li>
+            <li><strong>23. 弱酸陽離子樹脂</strong> 去除暫時硬度。</li>
+            <li><strong>24. 脫碳塔</strong> 物理吹除 CO₂。</li>
+            <li><strong>25. 混凝沈澱池</strong> 大型系統除濁用。</li>
+            <li><strong>26. 氧化劑添加系統</strong> 控制生物膜。</li>
+            <li><strong>27. 還原劑添加系統</strong> 去除餘氯保護 RO。</li>
+            <li><strong>28. 阻垢劑添加系統</strong> 防止 RO 膜結垢。</li>
+            <li><strong>29. 潔淨室操作面板</strong> 配合無塵室規範。</li>
+            <li><strong>30. 備援泵浦系統</strong> N+1 設計確保不斷水。</li>
+        </ul>
+
+        <div class="tech-deep-dive">
+            <h4>💡 技術深解：CEDI 連續電去離子</h4>
+            <p><strong>原理：</strong> 結合離子交換樹脂與電滲析，利用直流電場使水解離產生 H⁺ 與 OH⁻ 持續再生樹脂。</p>
+            <p><strong>優勢：</strong> 無需酸鹼再生，無化學廢液排放，產水穩定達 16-18 MΩ·cm。</p>
+            <p><strong>計算參考：</strong> 回收率通常設定 90-95%，進水硬度需 < 1 ppm (as CaCO₃)。</p>
+        </div>
+    </section>
+
+    <section id="wastewater">
+        <h2>3. 廢水處理：CMP、電鍍與綜合廢水</h2>
+        <p>針對不同污染源進行減量、無害化與資源化設計。</p>
+
+        <h3>3.1 處理設備與設計 (30項精選)</h3>
+        <ul class="equipment-list">
+            <li><strong>1. 粗/細攔汙柵</strong> 攔截大型固體。</li>
+            <li><strong>2. 沉砂池</strong> 去除高比重砂石。</li>
+            <li><strong>3. 油水分離機 (CPI)</strong> 去除浮油。</li>
+            <li><strong>4. 加壓浮除 (DAF)</strong> 利用微氣泡刮除 SS 與油脂。</li>
+            <li><strong>5. 調節池</strong> 均勻水質水量。</li>
+            <li><strong>6. pH 調整槽</strong> 酸鹼中和反應。</li>
+            <li><strong>7. 快混池</strong> 添加 PAC 進行電荷中和。</li>
+            <li><strong>8. 慢混池</strong> 添加 Polymer 產生大膠羽。</li>
+            <li><strong>9. 沉澱池 (Clarifier)</strong> 固液重力分離。</li>
+            <li><strong>10. 活性污泥池</strong> 好氧生物降解有機物。</li>
+            <li><strong>11. 缺氧池 (Anoxic)</strong> 脫硝反應去除氮。</li>
+            <li><strong>12. 厭氧池 (Anaerobic)</strong> 釋磷與高濃度 COD 降解。</li>
+            <li><strong>13. MBR (膜生物反應器)</strong> 取代二沉池，出水水質極佳。</li>
+            <li><strong>14. MBBR 生物載體</strong> 提高單位體積生物量。</li>
+            <li><strong>15. 鼓風機 (Blower)</strong> 提供好氧菌氧氣。</li>
+            <li><strong>16. 散氣盤 (Diffuser)</strong> 微氣泡提高氧傳送效率。</li>
+            <li><strong>17. Fenton 反應塔</strong> 強氧化降解難分解 COD。</li>
+            <li><strong>18. 化學除磷系統</strong> 添加鐵鹽沉澱磷酸鹽。</li>
+            <li><strong>19. 重金屬捕集設備</strong> 螯合沉澱重金屬。</li>
+            <li><strong>20. 帶式壓濾機</strong> 污泥脫水減容。</li>
+            <li><strong>21. 板框壓濾機</strong> 高固含量脫水。</li>
+            <li><strong>22. 疊螺式脫水機</strong> 適用含油污泥。</li>
+            <li><strong>23. 砂濾塔</strong> 三級處理去除殘留 SS。</li>
+            <li><strong>24. 活性碳吸附塔</strong> 去除色度與難降解 COD。</li>
+            <li><strong>25. 氨氮吹脫塔</strong> 高 pH 下吹除氨氣。</li>
+            <li><strong>26. 蒸發結晶器 (MVR)</strong> 零排放 (ZLD) 關鍵設備。</li>
+            <li><strong>27. 電透析 (EDR)</strong> 廢水濃縮減量。</li>
+            <li><strong>28. 消毒接觸池</strong> 次氯酸鈉殺菌排放。</li>
+            <li><strong>29. 污泥乾燥機</strong> 進一步降低污泥含水率。</li>
+            <li><strong>30. 線上 COD/SS 監測儀</strong> 符合環保局排放監控。</li>
+        </ul>
+
+         <div class="tech-deep-dive">
+            <h4>💡 技術深解：MBR 膜生物反應器</h4>
+            <p><strong>原理：</strong> 將生物降解與膜分離結合，MLSS 可高達 8000-12000 mg/L。</p>
+            <p><strong>優勢：</strong> 佔地面積小 (省去二沉池)，出水可直接回用或進入 RO。</p>
+            <p><strong>設計注意：</strong> 需設計定時空曝氣清洗與化學加強反洗 (CEB) 以控制膜污染 (Fouling)。</p>
+        </div>
+    </section>
+
+    <section id="desalination">
+        <h2>4. 海水淡化與苦鹹水處理</h2>
+        <p>利用高壓 RO 技術與能量回收裝置，將海水轉化為飲用水或工業用水。</p>
+
+        <h3>4.1 關鍵設備與設計 (10+項)</h3>
+        <ul class="equipment-list">
+            <li><strong>1. 深海取水頭</strong> 減少海洋生物吸入。</li>
+            <li><strong>2. 轉鼓篩網</strong> 去除海藻與貝類。</li>
+            <li><strong>3. UF 預處理系統</strong> 提供 SDI < 3 的優質進水。</li>
+            <li><strong>4. SWRO 膜元件</strong> 高脫鹽率耐高壓膜。</li>
+            <li><strong>5. 高壓泵浦</strong> 提供 50-70 bar 滲透壓動力。</li>
+            <li><strong>6. 能量回收裝置 (ERD)</strong> 回收濃水壓力，節能 30-60%。</li>
+            <li><strong>7. 增壓泵 (Booster Pump)</strong> 配合 ERD 使用。</li>
+            <li><strong>8. 沖洗水槽 (Suck-back Tank)</strong> 停機保護，防止真空吸入損壞。</li>
+            <li><strong>9. 後處理礦化</strong> 添加石灰石調整口感與 pH。</li>
+            <li><strong>10. 濃排水排放擴散器</strong> 減緩對海洋鹽度衝擊。</li>
+        </ul>
+
+        <div class="tech-deep-dive">
+            <h4>💡 技術深解：能量回收裝置 (ERD)</h4>
+            <p><strong>原理：</strong> 利用高壓濃排水直接接觸並加壓低壓進水 (Isobaric)，效率高達 96-98%。</p>
+            <p><strong>計算：</strong> 海水滲透壓約 25-28 bar，SWRO 操作壓力需達 60 bar 以上。</p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 辰發企業 Chenfa Enterprise. All Rights Reserved.</p>
+    <p>技術諮詢與合作，請洽 <a href="https://www.chenfa.tw/">官方網站</a></p>
+</footer>
+
+</body>
+</html>
