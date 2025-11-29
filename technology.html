@@ -306,6 +306,7 @@
     <p><a href="https://www.chenfa.tw/">回官網 www.chenfa.tw</a></p>
 </div>
 
+
 <div class="container">
 
     <!-- ========================================== -->
@@ -325,111 +326,163 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td><strong>飲料 (碳酸/果汁)</strong></td><td>純水 (RO Water)</td><td>需去除餘氯與有機物以防異味；TDS 控制在 50-100ppm 以維持口感。</td></tr>
+                <tr><td><strong>飲料 (碳酸/果汁)</strong></td><td>純水 (RO Water)</td><td>需去除餘氯與有機物以防異味；TDS 控制在 50–100 ppm 以維持口感。</td></tr>
                 <tr><td><strong>乳製品/冰淇淋</strong></td><td>高純水 / 無菌水</td><td>嚴格控制耐熱菌與孢子；管路需能耐受 85°C 以上熱水殺菌。</td></tr>
-                <tr><td><strong>茶飲/咖啡萃取</strong></td><td>軟水 / 過濾水</td><td>硬度需適中 (50-150ppm)，過軟導致萃取不足，過硬導致苦澀與設備結垢。</td></tr>
-                <tr><td><strong>蛋糕甜點/烘焙</strong></td><td>軟水</td><td>pH 值與硬度影響麵筋形成與發酵速率。</td></tr>
-                <tr><td><strong>雞精/保健飲品</strong></td><td>醫療級純水 (PW)</td><td>需符合藥典規範，去除內毒素 (Endotoxin &lt; 0.25 EU/ml) 與 TOC。</td></tr>
-                <tr><td><strong>肉品加工</strong></td><td>冷卻水 / 軟水</td><td>需保留適量餘氯 (0.5-1.0 ppm) 進行屠體殺菌，但在加工後段需去除。一般食品加工用水殘留氯通常 ≤0.5 ppm:contentReference[oaicite:0]{index=0}。</td></tr>
+                <tr><td><strong>茶飲/咖啡萃取</strong></td><td>軟水 / 過濾水</td><td>硬度需適中 (50–150 ppm)，避免萃取問題或設備結垢。</td></tr>
+                <tr><td><strong>蛋糕甜點/烘焙</strong></td><td>軟水</td><td>pH 與硬度影響麵糰與發酵特性。</td></tr>
+                <tr><td><strong>雞精/保健飲品</strong></td><td>醫療級純水 (PW)</td><td>需低 TOC、低內毒素，符合藥典級別的檢測與控制。</td></tr>
+                <tr><td><strong>肉品加工</strong></td><td>冷卻水 / 軟水</td><td>加工前段可保留低量餘氯 (0.5–1.0 ppm)，後段需去除以符合食品風味與安全。</td></tr>
             </tbody>
         </table>
 
-        <h3>1.2 關鍵設備與工程設計 (精選30項)</h3>
+        <h3>1.2 關鍵設備與工程設計 (精選 30 項)</h3>
         <ul class="equipment-grid">
-            <li><strong>1. 多介質過濾器 (MMF)</strong> <p>原理：利用無煙煤與石英砂分層過濾。設計：濾速 10-20 m/hr，去除懸浮微粒 (SS) &gt; 10µm。</p></li>
-            <li><strong>2. 活性碳過濾器 (ACF)</strong> <p>原理：物理吸附有機物，化學還原餘氯。計算：EBCT (空床接觸時間) 需 &gt; 5-10min，確保餘氯 &lt; 0.1ppm。</p></li>
-            <li><strong>3. 自動軟化器 (Softener)</strong> <p>原理：利用陽離子樹脂 ($Na^+$) 交換鈣鎂 ($Ca^{2+}, Mg^{2+}$)。注意：需定時再生，防止硬度穿透導致後端結垢。</p></li>
-            <li><strong>4. 5µm/1µm 精密過濾器</strong> <p>設計：作為 RO 前的保安過濾 (Security Filter)，防止樹脂或濾材碎片進入高壓泵。</p></li>
-            <li><strong>5. 板式換熱器 (PHE)</strong> <p>用途：巴式殺菌前的預熱，或將原水冷卻/加熱至 RO 最佳操作溫度 (25°C)。</p></li>
-            <li><strong>6. 逆滲透 (RO) 膜組</strong> <p>原理：孔徑 0.0001µm，去除 99% 以上溶解鹽類與細菌病毒。設計：食品級通常採用低壓膜，回收率 50-75%。</p></li>
-            <li><strong>7. 納濾 (NF)</strong> <p>用途：去除二價離子與有機物，但保留一價礦物質，常用於高階礦泉水製程。</p></li>
-            <li><strong>8. 超濾 (UF)</strong> <p>原理：孔徑 0.01-0.1µm。用途：去除大分子蛋白、膠體、細菌 (Log 6 去除率)。</p></li>
-            <li><strong>9. 脫氣塔 (Degasser)</strong> <p>原理：利用強制通風去除水中 $CO_2$，減輕陰離子交換負荷並調整 pH。</p></li>
-            <li><strong>10. 紫外線殺菌燈 (UV 254nm)</strong> <p>計算：劑量需 &gt; $30,000 \mu W \cdot s/cm^2$ 以確保殺滅細菌與病毒。</p></li>
-            <li><strong>11. 臭氧產生機 (Ozone)</strong> <p>原理：強氧化劑 ($ORP > 800mV$)。用途：終端殺菌與瓶蓋殺菌，濃度通常控制在 0.2-0.4 ppm。</p></li>
-            <li><strong>12. 臭氧氣液混合泵</strong> <p>設計：取代傳統文氏管，提高臭氧溶解效率達 90% 以上。</p></li>
-            <li><strong>13. 0.2µm 終端絕對濾芯</strong> <p>規格：需通過細菌挑戰測試 (Bacterial Challenge Test)，確保攔截最後殘留菌體。</p></li>
-            <li><strong>14. 316L 衛生級儲水桶</strong> <p>設計：內表面拋光 $Ra &lt; 0.4\mu m$，底部採用碟型封頭 (Dished Head) 確保完全排空無死角。</p></li>
-            <li><strong>15. 呼吸器 (Vent Filter)</strong> <p>規格：採用疏水性 PTFE 材質，0.2µm，防止外部空氣細菌汙染儲槽。</p></li>
-            <li><strong>16. CIP 線上清洗系統</strong> <p>設計：包含酸洗、鹼洗槽。流速需 &gt; 1.5 m/s 以產生紊流清洗管壁生物膜。</p></li>
-            <li><strong>17. 85°C 熱水殺菌系統</strong> <p>原理：利用高溫循環全系統，適用於不宜使用化學藥劑的生技食品線。</p></li>
-            <li><strong>18. 管路靜態混合器</strong> <p>用途：在管道內利用擾流葉片，使殺菌劑或絮凝劑瞬間與水混合均勻。</p></li>
-            <li><strong>19. 185nm TOC 分解 UV</strong> <p>用途：高階保健飲品用，光氧化分解微量有機物 (TOC)。</p></li>
-            <li><strong>20. 衛生級隔膜閥 (Diaphragm Valve)</strong> <p>特點：閥體內無死角，流道平滑，是製藥與食品業標準閥門。</p></li>
-            <li><strong>21. 衛生級離心泵</strong> <p>設計：葉輪開放式或半開放式，機械軸封需採衛生級設計 (SiC/SiC)。</p></li>
-            <li><strong>22. 線上導電度/TDS 計</strong> <p>監測：即時監控水質純度，並連動排放閥 (Divert Valve) 排除不合格產水。</p></li>
-            <li><strong>23. 衛生型電磁流量計</strong> <p>特點：無阻流件，無壓損，可耐高溫 CIP 清洗。</p></li>
-            <li><strong>24. 衛生壓力傳送器</strong> <p>用途：監控濾芯前後壓差 ($\Delta P$)，判斷更換時機。</p></li>
-            <li><strong>25. 原水調節儲槽</strong> <p>設計：避免原水壓力波動影響後段設備，需加蓋防塵。</p></li>
-            <li><strong>26. 自動加藥系統</strong> <p>用途：精準投加次氯酸鈉(殺菌)或還原劑(除氯)。</p></li>
-            <li><strong>27. 袋式過濾器</strong> <p>用途：大流量初級過濾，攔截肉眼可見雜質。</p></li>
-            <li><strong>28. 錳砂過濾器</strong> <p>用途：若水源為地下水，需去除鐵、錳以防變色與口感不佳。</p></li>
-            <li><strong>29. 循環迴路配管 (Loop)</strong> <p>設計：確保管內流速 &gt; 1.0 m/s，回水持續流動，防止細菌滋生 (Biofilm)。</p></li>
-            <li><strong>30. PLC/HMI 自動控制</strong> <p>功能：全自動運行、異常警報、歷史數據紀錄 (符合 FDA 21 CFR Part 11 為佳)。</p></li>
+            <li><strong>多介質過濾器 (MMF)</strong>
+                <p>用途：去除懸浮物。設計公式：過濾面積 = Q / v (m²)，v 常 10–20 m/hr。</p>
+            </li>
+            <li><strong>活性碳過濾器 (GAC)</strong>
+                <p>用途：吸附有機物、去除餘氯。EBCT = V_bed / Q，常需 > 5–10 min。</p>
+            </li>
+            <li><strong>軟化器 (Ion Exchange)</strong>
+                <p>用途：去硬度。計算：當量負荷 (eq) 與再生周期決定樹脂容量。</p>
+            </li>
+            <li><strong>保安過濾 (5µm / 1µm)</strong>
+                <p>用途：保護下游膜系統，減少顆粒破壞高壓泵。</p>
+            </li>
+            <li><strong>板式換熱器 (PHE)</strong>
+                <p>用途：溫度控制，熱負荷 Q = m·Cp·ΔT。</p>
+            </li>
+            <li><strong>逆滲透 (RO)</strong>
+                <p>用途：主力除鹽/除微生物。膜面積 A = Q_perm / J_op (L/m²·h)。</p>
+            </li>
+            <li><strong>納濾 (NF)</strong>
+                <p>用途：選擇性去除多價離子，保留部分礦物質。</p>
+            </li>
+            <li><strong>超濾 (UF)</strong>
+                <p>用途：截留膠體、大分子與細菌 (0.01–0.1 µm)。</p>
+            </li>
+            <li><strong>脫氣 / 脫氧系統</strong>
+                <p>用途：減少溶氧/CO₂，保護去離子系統與提升電阻率。</p>
+            </li>
+            <li><strong>UV 254 / 185 nm</strong>
+                <p>用途：254 nm 滅菌，185 nm 降低 TOC；劑量與接觸時間依流量計算。</p>
+            </li>
+            <li><strong>臭氧系統</strong>
+                <p>用途：強氧化與終端消毒。設計依 CT 概念 (濃度×時間)。</p>
+            </li>
+            <li><strong>0.2 µm 終端濾芯</strong>
+                <p>用途：無菌灌裝前末端過濾，需細菌挑戰測試。</p>
+            </li>
+            <li><strong>SUS316L 衛生儲槽 (SIP 可行)</strong>
+                <p>用途：貯存拋光水。規格：內表面 Ra ≤ 0.4 µm。</p>
+            </li>
+            <li><strong>通氣呼吸濾器 (0.2 µm)</strong>
+                <p>用途：儲槽通氣過濾，防止外空氣污染。</p>
+            </li>
+            <li><strong>CIP / SIP 系統</strong>
+                <p>用途：線上清洗與滅菌，設計包含溫度、濃度與時間。</p>
+            </li>
+            <li><strong>熱水滅菌 85°C</strong>
+                <p>用途：對於不適合化學品的線路，使用熱水循環滅菌。</p>
+            </li>
+            <li><strong>靜態混合器</strong>
+                <p>用途：管內藥劑混合，避免死角與不均勻投藥。</p>
+            </li>
+            <li><strong>導電度 / TDS 在線監測</strong>
+                <p>用途：即時檢測 RO 或 DI 產水品質並控制 diversion。</p>
+            </li>
+            <li><strong>TOC 在線儀</strong>
+                <p>用途：高階飲品或醫療飲料需要低 TOC 的線上監控。</p>
+            </li>
+            <li><strong>衛生級泵浦與閥門</strong>
+                <p>用途：選用衛生軸封與隔膜閥，減少汙染風險。</p>
+            </li>
+            <li><strong>流量計 / 壓力計監控</strong>
+                <p>用途：保養維護與故障排除的第一線參數。</p>
+            </li>
+            <li><strong>濾材與濾芯管理系統</strong>
+                <p>用途：排程更換與庫存管理，避免突發停機。</p>
+            </li>
+            <li><strong>自動加藥系統</strong>
+                <p>用途：antiscalant、pH 調整、漂白或還原劑精準投加。</p>
+            </li>
+            <li><strong>袋式過濾器</strong>
+                <p>用途：階段性高流量粗過濾。</p>
+            </li>
+            <li><strong>錳砂過濾器 (地下水)</strong>
+                <p>用途：去除鐵、錳，避免色度與口感問題。</p>
+            </li>
+            <li><strong>循環迴路（Loop）</strong>
+                <p>用途：保持循環速度 ≥ 1.0 m/s，減少生物膜生成。</p>
+            </li>
+            <li><strong>PLC / HMI 自動化</strong>
+                <p>用途：流程控制、歷史數據記錄、HACCP 支援。</p>
+            </li>
+            <li><strong>緊急旁路與轉換閥</strong>
+                <p>用途：維護時維持部分生產不中斷，符合 GMP 要求。</p>
+            </li>
+            <li><strong>品質稽核取樣口</strong>
+                <p>用途：易取樣設計、SOP 規範化。</p>
+            </li>
         </ul>
 
         <div class="deep-dive-box">
-            <h4>技術深解：衛生配管與微生物控制</h4>
-            <p><strong>死角控制 (Dead Leg)：</strong> 支管長度 $L$ 與管徑 $D$ 之比需 $L/D < 2$ (舊標準為 6，新標準更嚴格)，避免死水區滋生細菌。</p>
-            <p><strong>表面粗糙度 (Ra)：</strong> 接觸水部分之不鏽鋼表面 $Ra$ 值應小於 $0.6 \mu m$ (機械拋光) 或 $0.4 \mu m$ (電解拋光 EP)。</p>
-            <p><strong>流速規範：</strong> 循環迴路回水流速建議維持在 $1.2 \sim 1.5 \, m/s$，以維持高雷諾數 ($Re > 4000$) 的紊流狀態，物理性刷洗管壁。</p>
-            <div class="back-link">
-                <a href="https://www.chenfa.tw/">回首頁- 辰發企業|專業水處理工程、設備、藥品、配管</a>
-            </div>
+            <h4>技術深解：衛生配管、死角與表面粗糙度</h4>
+            <p><strong>死角控制 (Dead Leg)：</strong> 支管長度 L 與直徑 D 的比值建議 L/D &lt; 2，避免死水區滋生細菌（實務上愈短愈好）。</p>
+            <p><strong>表面粗糙度 (Ra)：</strong> 不鏽鋼接觸面建議 Ra ≤ 0.6 µm（機械拋光），若有更高衛生需求採 Ra ≤ 0.4 µm（電解拋光）。</p>
+            <p><strong>流速建議：</strong> 循環迴路流速建議 1.0–1.5 m/s，可維持紊流 (Re &gt; 4000) 並減少生物膜。</p>
+            <div class="back-link"><a href="https://www.chenfa.tw/">回首頁 - 辰發企業</a></div>
         </div>
     </section>
 
     <!-- ========================================== -->
-    <!-- 2. 科技業 (半導體/電子) -->
+    <!-- 2. 科技業 (半導體/電子/面板) -->
     <!-- ========================================== -->
     <section id="tech-industry">
         <h2>2. 科技業：超純水 (UPW) 等級與系統設計</h2>
-        <p><strong>設計核心：</strong> 追求水的理論極限。半導體製程對特定離子 (硼、矽)、TOC (總有機碳) 及微粒 (Particles) 敏感度極高。水質目標通常為電阻率 18.2 $M\Omega\cdot cm$ (25°C):contentReference[oaicite:1]{index=1}。</p>
+        <p><strong>設計核心：</strong> 半導體與面板製程要求極低的離子含量、TOC、粒子與微生物；常以電阻率 (MΩ·cm)、TOC (ppb)、粒子數 (particles/mL) 評估質量，目標可達 18.2 MΩ·cm (超純水)。</p>
 
-        <h3>2.1 適用產業與需求 (10類)</h3>
-        <p>半導體晶圓代工 (5nm/3nm 節點)、TFT-LCD/OLED 面板、高密度連接板 (HDI PCB)、太陽能光電 (PV)、LED 磊晶、被動元件 (MLCC)、精密光學鏡頭、生技製藥 (WFI 注射用水)、鋰電池電極材料、奈米粉體製程。</p>
+        <h3>2.1 代表性產業（10 類）</h3>
+        <p>半導體晶圓製造、面板 (TFT-LCD/OLED)、CMP 清洗、光罩清洗、LED 製程、太陽能電池、精密光學、醫療感測器、電鍍高純度前處理、研究機構 UPW。</p>
 
-        <h3>2.2 關鍵設備與工程設計 (精選30項)</h3>
+        <h3>2.2 關鍵設備與工程設計 (精選 30 項)</h3>
         <ul class="equipment-grid">
-            <li><strong>1. 盤式過濾器 (Disc Filter)</strong> <p>用途：自清洗式過濾，攔截 &gt; 100µm 雜質，保護 UF。</p></li>
-            <li><strong>2. 超過濾 (UF)</strong> <p>規格：中空纖維膜 (Hollow Fiber)，截留分子量 100k Da，確保 SDI &lt; 3。</p></li>
-            <li><strong>3. 雙段逆滲透 (2-Pass RO)</strong> <p>設計：第一段去除 99% 鹽類，第二段調整 pH 以去除 $CO_2$ 與硼。</p></li>
-            <li><strong>4. 脫氣膜 (Membrane Degasser)</strong> <p>原理：利用真空與掃氣氣體，將水中溶氧 (DO) 降至 &lt; 1 ppb，防止晶圓氧化:contentReference[oaicite:2]{index=2}。</p></li>
-            <li><strong>5. 連續電去離子 (CEDI)</strong> <p>原理：電場驅動離子移動，水解離再生樹脂。產水電阻率穩定 &gt; 16 $M\Omega\cdot cm$。</p></li>
-            <li><strong>6. 185nm TOC UV 降解器</strong> <p>原理：高能量 UV 產生氫氧自由基 ($OH^\bullet$)，將有機物氧化為 $CO_2$。</p></li>
-            <li><strong>7. 拋光混床 (Polishing Mixed Bed)</strong> <p>規格：使用核子級樹脂 (不釋放 TOC)，將水質提升至 18.2 $M\Omega\cdot cm$。</p></li>
-            <li><strong>8. 終端 UF (Terminal UF)</strong> <p>規格：截留分子量 5000-6000 Da，去除細菌屍體與熱原。</p></li>
-            <li><strong>9. PVDF 潔淨管材</strong> <p>特點：低溶出、耐化學性、內壁極光滑，採用 IR 紅外線無縫焊接。</p></li>
-            <li><strong>10. 氮氣封存系統</strong> <p>用途：純水儲槽頂部灌入高純度氮氣，防止空氣中 $CO_2$ 與 $O_2$ 溶入。</p></li>
-            <li><strong>11. 硼去除樹脂塔 (Boron Selective Resin)</strong> <p>設計：使用專一性螯合樹脂，將硼含量降至 &lt; 50 ppt (先進製程要求)。</p></li>
-            <li><strong>12. 板式熱交換器 (PHE)</strong> <p>控制：精確控制水溫 ±0.5°C，因為水溫影響 RO 產水量與電阻率測量。</p></li>
-            <li><strong>13. 變頻器 (VFD)</strong> <p>功能：泵浦恆壓控制，節能並減少管網水錘衝擊。</p></li>
-            <li><strong>14. 線上 TOC 分析儀</strong> <p>規格：偵測極限需達 0.1 ppb，即時監控有機物汙染。</p></li>
-            <li><strong>15. 線上 Silica 分析儀</strong> <p>用途：監測二氧化矽穿透，防止晶圓表面水痕 (Water marks)。</p></li>
-            <li><strong>16. 線上微粒計數器 (LPC)</strong> <p>規格：監測 0.05µm 或更小微粒數量。</p></li>
-            <li><strong>17. 線上溶氧分析儀 (DO Meter)</strong> <p>監控：確保 DO 值符合製程需求 (通常 &lt; 1-10 ppb)。</p></li>
-            <li><strong>18. 回收水 RO (Reclaim RO)</strong> <p>設計：使用抗汙染膜，將製程清洗水回收率提升至 70-80%。</p></li>
-            <li><strong>19. 樹脂捕捉器 (Resin Trap)</strong> <p>位置：混床出口，防止樹脂洩漏進入後端潔淨管路。</p></li>
-            <li><strong>20. 防震軟管</strong> <p>用途：隔絕泵浦震動，防止微震動導致管路微粒釋放。</p></li>
-            <li><strong>21. EDI 直流電源供應器</strong> <p>控制：可調電壓電流，優化離子遷移效率。</p></li>
-            <li><strong>22. 內襯鐵氟龍儲槽 (Lined Tank)</strong> <p>材質：鋼製桶槽內襯 ETFE/PFA，防止金屬離子析出。</p></li>
-            <li><strong>23. 弱酸陽離子樹脂 (WAC)</strong> <p>用途：去除原水暫時硬度 ($HCO_3^-$)，減少 RO 結垢風險。</p></li>
-            <li><strong>24. 強制通風脫碳塔</strong> <p>設計：填充拉西環 (Raschig rings)，物理吹除游離 $CO_2$。</p></li>
-            <li><strong>25. 混凝沈澱系統</strong> <p>用途：大型系統前處理，去除膠體與懸浮固體。</p></li>
-            <li><strong>26. 非氧化性殺菌劑添加</strong> <p>用途：RO 前段間歇投加，控制生物膜且不破壞膜片。</p></li>
-            <li><strong>27. SBS 還原劑添加</strong> <p>用途：去除餘氯，保護 Polyamide 材質 RO 膜 (耐氯性差)。</p></li>
-            <li><strong>28. 阻垢劑添加</strong> <p>用途：分散鹽類結晶，提高 RO 回收率。</p></li>
-            <li><strong>29. 潔淨室監控面板 (FFU)</strong> <p>設計：將水質數據傳輸至 FAB 內監控系統。</p></li>
-            <li><strong>30. 備援泵浦 (N+1)</strong> <p>策略：關鍵設備採 N+1 或 100% 備援，確保 24/7 不斷水。</p></li>
+            <li><strong>盤式過濾器 / 自清洗濾</strong><p>用途：保護 UF，攔截大粒徑雜質。</p></li>
+            <li><strong>超濾 (UF)</strong><p>用途：去除膠體、膠狀物與部分微生物，SDI &lt; 3。</p></li>
+            <li><strong>雙段 RO (2-Pass RO)</strong><p>用途：初級脫鹽 + 二級拋光，配合 pH 調整以去硼。</p></li>
+            <li><strong>膜脫氣器 (Membrane Degasser)</strong><p>用途：降低 DO/CO₂，提升電阻率穩定性。</p></li>
+            <li><strong>CEDI / EDI</strong><p>用途：連續去離子，無需酸鹼再生，常為 UPW 關鍵段。</p></li>
+            <li><strong>185 nm UV (TOC 降解)</strong><p>用途：產生 OH• 去除有機物，提升 TOC 表現。</p></li>
+            <li><strong>拋光混床 (Polishing Mixed Bed)</strong><p>用途：最終達到 18.2 MΩ·cm。</p></li>
+            <li><strong>終端微過濾 / UF</strong><p>用途：末端粒子與微生物控制。</p></li>
+            <li><strong>PVDF / PTFE 衛生級配管</strong><p>用途：低溶出、易清洗的配管系統。</p></li>
+            <li><strong>氮氣封存系統</strong><p>用途：儲槽頂部惰化，降低 CO₂、O₂ 溶入。</p></li>
+            <li><strong>硼去除樹脂塔</strong><p>用途：特殊樹脂處理低濃度硼 (ppb 級) 要求。</p></li>
+            <li><strong>精密溫度控制 (PHE)</strong><p>用途：水溫影響電阻率，控制 ±0.5°C。</p></li>
+            <li><strong>VFD 與壓力控制系統</strong><p>用途：泵浦與管網恆壓、節能。</p></li>
+            <li><strong>線上 TOC 與電阻率儀</strong><p>用途：關鍵參數監控並觸發警報。</p></li>
+            <li><strong>粒子計數器 (LPC)</strong><p>用途：0.05–0.2 µm 粒子監控。</p></li>
+            <li><strong>溶氧 (DO) 在線儀</strong><p>用途：確保 DO 符合製程需求 (ppb 級)。</p></li>
+            <li><strong>回收 RO / 再生處理</strong><p>用途：降低廢水量、提升經濟性。</p></li>
+            <li><strong>樹脂捕捉器 (Resin Trap)</strong><p>用途：防止樹脂顆粒進入後段系統。</p></li>
+            <li><strong>防震 / 減振設備</strong><p>用途：避免泵浦震動引發微粒污染。</p></li>
+            <li><strong>EDI 電源與控制器</strong><p>用途：優化 EDI 效率與壽命。</p></li>
+            <li><strong>內襯 FEP/PFA 儲槽</strong><p>用途：避免金屬離子溶出。</p></li>
+            <li><strong>弱酸陽樹脂塔 (WAC)</strong><p>用途：預除 HCO₃⁻，減少 RO 結垢。</p></li>
+            <li><strong>混凝 / 沉澱前處理</strong><p>用途：大型系統降低懸浮物。</p></li>
+            <li><strong>非氧化性生物抑制劑投加</strong><p>用途：防止膜生物污堵且不損害膜材。</p></li>
+            <li><strong>SBS 還原劑</strong><p>用途：去除餘氯保護聚酰胺類膜。</p></li>
+            <li><strong>阻垢劑投加</strong><p>用途：提高 RO 回收並防止晶體結垢。</p></li>
+            <li><strong>潔淨室水質資料整合 (BMS)</strong><p>用途：製程數據整合，提升追蹤能力。</p></li>
+            <li><strong>粒子 / 微生物趨勢分析模組</strong><p>用途：預防性維護與污染源追蹤。</p></li>
+            <li><strong>備援策略 (N+1)</strong><p>用途：關鍵段採 N+1 設計，確保 24/7 運轉。</p></li>
+            <li><strong>實驗室 (ICP/IC/TOC)</strong><p>用途：定期驗證水質、釐清微量金屬或離子來源。</p></li>
         </ul>
 
         <div class="deep-dive-box">
-            <h4>技術深解：185nm UV 降解 TOC 機制</h4>
-            <p><strong>光氧化原理：</strong> 185nm 紫外光能量極高，能直接切斷有機分子鏈，並光解水分子產生氫氧自由基 ($H_2O + h\\nu \\rightarrow H^\\bullet + OH^\\bullet$):contentReference[oaicite:3]{index=3}。</p>
-            <p><strong>反應產物：</strong> 有機物被氧化成 $CO_2$ 與有機酸。這些產物會導致電阻率暫時下降，因此 **必須** 在 UV 後設置拋光混床 (Polishing Mixed Bed) 來去除這些離子化的產物，才能達到 18.2 $M\\Omega \\cdot cm$。</p>
-            <div class="back-link">
-                <a href="https://www.chenfa.tw/">回首頁- 辰發企業|專業水處理工程、設備、藥品、配管</a>
-            </div>
+            <h4>技術深解：185 nm UV 對 TOC 的影響</h4>
+            <p>185 nm UV 能直接分解有機分子並產生自由基 (OH•)，但會把有機物轉成小分子離子，短期內可能使電阻率下降。因此 UV 後務必設置拋光混床或 EDI 以去除產生的離子，恢復高電阻率。</p>
+            <div class="back-link"><a href="https://www.chenfa.tw/">回首頁 - 辰發企業</a></div>
         </div>
     </section>
 
@@ -437,50 +490,67 @@
     <!-- 3. 廢水處理 -->
     <!-- ========================================== -->
     <section id="wastewater">
-        <h2>3. 廢水處理：CMP、電鍍、市政與綜合廢水</h2>
-        <p><strong>設計核心：</strong> 廢水處理強調「分流處理」。針對 COD (化學需氧量)、BOD (生物需氧量)、SS (懸浮固體)、重金屬與氨氮，採用物理、化學、生物三級處理程序。</p>
+        <h2>3. 廢水處理：CMP、市政、電鍍、食品等</h2>
+        <p><strong>設計核心：</strong> 廢水處理重點在於分類（分流）與模組化設計：物化 (去 SS、油脂)、生化 (BOD/COD、氨氮)、高級處理 (去鹽、去毒、回收或濃縮)。</p>
 
-        <h3>3.1 設備與工藝設計 (30項精選)</h3>
+        <h3>3.1 15 種常見廢水類型（範例）</h3>
+        <ol>
+            <li>CMP / 半導體洗滌廢水</li>
+            <li>市政污水</li>
+            <li>電鍍廢水（含重金屬）</li>
+            <li>食品製程廢水（高 COD / 油脂）</li>
+            <li>大型汙水處理廠</li>
+            <li>科學園區混合工業廢水</li>
+            <li>紡織染整</li>
+            <li>製藥廢水</li>
+            <li>化工有機廢水</li>
+            <li>餐飲油水</li>
+            <li>造紙廢水</li>
+            <li>養殖場廢水</li>
+            <li>礦業廢水</li>
+            <li>建築工地廢水</li>
+            <li>汽機車維修廢水</li>
+        </ol>
+
+        <h3>3.2 核心設備與設計 (30 項)</h3>
         <ul class="equipment-grid">
-            <li><strong>1. 粗/細攔汙柵 (Bar Screen)</strong> <p>間隙：粗柵 20-50mm，細柵 5-10mm，保護後端泵浦。</p></li>
-            <li><strong>2. 渦流沉砂池</strong> <p>用途：利用離心力去除比重大之砂石，防止管路磨損。</p></li>
-            <li><strong>3. 油水分離機 (CPI/API)</strong> <p>原理：利用斯托克斯定律 (Stokes Law) 讓油珠上浮分離。</p></li>
-            <li><strong>4. 加壓浮除 (DAF)</strong> <p>關鍵：溶氣壓力 4-6 kg/cm²，產生 30-100µm 微氣泡，去除乳化油與 SS。</p></li>
-            <li><strong>5. 調節池 (EQ Tank)</strong> <p>功能：均勻水質、水量，避免衝擊負荷 (Shock Loading) 影響生物池。</p></li>
-            <li><strong>6. pH 調整槽</strong> <p>控制：依據後續反應需求調整，如金屬沉澱需 pH 9-11，Fenton 需 pH 3-4。</p></li>
-            <li><strong>7. 快混池 (Coagulation)</strong> <p>藥劑：PAC (聚氯化鋁) 或 氯化鐵。G值 (速度梯度) 需大，瞬間混合。</p></li>
-            <li><strong>8. 慢混池 (Flocculation)</strong> <p>藥劑：PAM (高分子絮凝劑)。G值小，避免打碎已形成之膠羽。</p></li>
-            <li><strong>9. 沉澱池 (Clarifier)</strong> <p>設計：表面負荷率 (Surface Loading Rate) 是關鍵設計參數。</p></li>
-            <li><strong>10. 活性污泥曝氣池</strong> <p>參數：維持 MLSS 2000-4000 mg/L，DO 2-4 mg/L。</p></li>
-            <li><strong>11. 缺氧池 (Anoxic)</strong> <p>反應：脫硝反應 ($NO_3^- \\rightarrow N_2$)，需內迴路泵補充硝酸鹽氮。</p></li>
-            <li><strong>12. 厭氧池 (Anaerobic)</strong> <p>反應：釋磷作用與水解酸化，提高廢水可生化性。</p></li>
-            <li><strong>13. MBR (膜生物反應器)</strong> <p>優勢：MLSS 可達 8000-12000 mg/L，佔地省 50%，出水 SS 趨近於零。</p></li>
-            <li><strong>14. MBBR (移動床生物膜)</strong> <p>設計：投加 PE 懸浮載體，填充率 30-50%，提升老舊汙水廠處理量。</p></li>
-            <li><strong>15. 魯式/懸浮 鼓風機</strong> <p>用途：提供生物代謝所需氧氣，佔全廠能耗 60% 以上。</p></li>
-            <li><strong>16. 微氣泡散氣盤</strong> <p>材質：EPDM 或 矽膠，氣孔細密提高氧傳送效率 (OTE)。</p></li>
-            <li><strong>17. Fenton (芬頓) 反應塔</strong> <p>原理：$Fe^{2+} + H_2O_2$ 產生強氧化力 $OH^\bullet$，處理難降解 COD (染整、化工)。</p></li>
-            <li><strong>18. 化學除磷系統</strong> <p>原理：添加鋁鹽或鐵鹽，形成難溶磷酸鹽沉澱。</p></li>
-            <li><strong>19. 重金屬捕集沉澱</strong> <p>藥劑：特殊螯合樹脂或 TMT-15，針對絡合態重金屬。</p></li>
-            <li><strong>20. 帶式壓濾機</strong> <p>用途：連續式污泥脫水，餅含水率約 75-80%。</p></li>
-            <li><strong>21. 板框壓濾機</strong> <p>用途：間歇式高壓脫水，含水率可降至 60-70%。</p></li>
-            <li><strong>22. 疊螺式脫水機</strong> <p>優勢：不易堵塞，適合含油污泥 (如食品廢水)，低能耗。</p></li>
-            <li><strong>23. 砂濾塔 (Sand Filter)</strong> <p>用途：三級處理，去除二沉池溢流之 SS。</p></li>
-            <li><strong>24. 活性碳吸附塔</strong> <p>用途：三級處理，去除色度與微量有毒有機物。</p></li>
-            <li><strong>25. 氨氮吹脫塔</strong> <p>原理：將 pH 調至 11 以上，將 $NH_4^+$ 轉為 $NH_3$ 氣體吹出。</p></li>
-            <li><strong>26. MVR 蒸發結晶器</strong> <p>用途：零排放 (ZLD) 系統，將高鹽廢水蒸發結晶為固體鹽。</p></li>
-            <li><strong>27. 雙極膜電透析 (BP-ED)</strong> <p>用途：將鹽水 ($NaCl$) 轉化為酸 ($HCl$) 與鹼 ($NaOH$) 回用。</p></li>
-            <li><strong>28. 消毒接觸池</strong> <p>標準：放流前殺菌，大腸桿菌群需符合排放標準。</p></li>
-            <li><strong>29. 污泥乾燥機</strong> <p>用途：利用熱能進一步降低污泥重量，減少清運成本。</p></li>
-            <li><strong>30. 水質監測站 (CWMS)</strong> <p>儀器：COD, SS, pH, 導電度, 溫度，訊號即時傳輸環保局。</p></li>
+            <li><strong>格柵 / 攔污設備</strong><p>用途：擋大顆粒保護下游設備。</p></li>
+            <li><strong>調節池 (EQ)</strong><p>用途：均化水質與流量，容量 V = Q_avg × T_ret (hr)。</p></li>
+            <li><strong>初沈池</strong><p>用途：去除較大懸浮固體。</p></li>
+            <li><strong>油水分離 / DAF</strong><p>用途：去除油脂 / 乳化物，DAF 溶氣壓力與泡徑為設計關鍵。</p></li>
+            <li><strong>混凝 / 絮凝</strong><p>用途：藥劑投加優化 (Jar Test)。</p></li>
+            <li><strong>沉澱 / 澄清</strong><p>用途：固液分離，表面負荷為重要指標。</p></li>
+            <li><strong>曝氣池 (活性污泥)</strong><p>用途：BOD 去除，設計 MLSS, SRT。</p></li>
+            <li><strong>缺氧 / 反硝化段</strong><p>用途：脫氮。</p></li>
+            <li><strong>厭氧處理</strong><p>用途：高濃度有機廢水產沼氣。</p></li>
+            <li><strong>MBR (膜生物反應器)</strong><p>用途：高效固液分離，設計通量 (LMH) 為關鍵。</p></li>
+            <li><strong>MBBR</strong><p>用途：補強生物處理能力。</p></li>
+            <li><strong>鼓風機 / 曝氣系統</strong><p>用途：氧供給為能耗主因。</p></li>
+            <li><strong>化學氧化 (Fenton / AOP)</strong><p>用途：處理難降解 COD，Fenton 最佳 pH 約 3–4。</p></li>
+            <li><strong>活性碳吸附</strong><p>用途：去除微量有機物與色度。</p></li>
+            <li><strong>離子交換 / 電化學</strong><p>用途：特定離子或鹽類回收。</p></li>
+            <li><strong>蒸發濃縮 / 結晶 (MVR)</strong><p>用途：高鹽廢水濃縮以達到 ZLD。</p></li>
+            <li><strong>重金屬沉澱</strong><p>用途：化學沉澱去除 Cr, Ni, Cu 等。</p></li>
+            <li><strong>污泥脫水 (帶式 / 板框 / 疊螺)</strong><p>用途：減量化後運送或燃料化處理。</p></li>
+            <li><strong>污泥處理 (厭氧消化)</strong><p>用途：產沼氣與減量。</p></li>
+            <li><strong>消毒池 (氯 / UV)</strong><p>用途：放流前消毒。</p></li>
+            <li><strong>監測站 (COD / BOD / SS / pH)</strong><p>用途：持續監控與法規回報。</p></li>
+            <li><strong>廢水熱回收系統</strong><p>用途：回收熱能降低運營成本。</p></li>
+            <li><strong>溶氣浮選 (DAF)</strong><p>用途：高效去除油脂及細微懸浮物。</p></li>
+            <li><strong>脫氮創新系統 (Anammox)</strong><p>用途：低能耗脫氮解決方案。</p></li>
+            <li><strong>雙極膜電透析 (BP-ED)</strong><p>用途：鹽分分離並回收酸鹼。</p></li>
+            <li><strong>化學藥劑配注與儲存</strong><p>用途：安全管理與自動投加。</p></li>
+            <li><strong>緊急貯槽 / 應急系統</strong><p>用途：處理突發排放事件。</p></li>
+            <li><strong>聲學 / 振動抑制</strong><p>用途：減少設備故障與延長壽命。</p></li>
+            <li><strong>自動化 SCADA / 遠端監控</strong><p>用途：資料蒐集、遠端維運及法規回報。</p></li>
+            <li><strong>最終濃排放擴散或地下注入方案</strong><p>用途：依環評與地理條件選擇排放方式。</p></li>
         </ul>
 
-         <div class="deep-dive-box">
-            <h4>技術深解：Fenton 法與 MBR 膜通量</h4>
-            <p><strong>Fenton 反應：</strong> 最佳操作 pH 為 3-4。$H_2O_2$ 與 $Fe^{2+}$ 比例需經 Jar Test 實驗決定，通常重量比約為 1:1 至 10:1。反應後需調高 pH 至中性進行凝集沉澱。</p>
-            <p><strong>MBR 設計通量 (Flux)：</strong> 對於生活汙水，設計通量約 $15-25 \, L/m^2 \cdot hr$ (LMH)；對於難處理工業廢水，通量需降至 $10-15 \, LMH$ 以延緩膜阻塞 (Fouling)。需配備定時反洗與化學清洗 (CIP) 程序。</p>
-            <div class="back-link">
-                <a href="https://www.chenfa.tw/">回首頁- 辰發企業|專業水處理工程、設備、藥品、配管</a>
-            </div>
+        <div class="deep-dive-box">
+            <h4>技術深解：Fenton 與 MBR 通量計算</h4>
+            <p><strong>Fenton：</strong> 最佳工作 pH 3–4，H2O2 與 Fe2+ 投加比需藉 Jar Test 決定，常見重量比 1:1 到 10:1。反應後提高 pH 進行混凝沉澱。</p>
+            <p><strong>MBR 通量：</strong> 生活污水常設計 15–25 LMH，工業難處理水 10–15 LMH，通量越高膜阻塞風險增，需規劃定期 CIP 與間歇反洗。</p>
+            <div class="back-link"><a href="https://www.chenfa.tw/">回首頁 - 辰發企業</a></div>
         </div>
     </section>
 
@@ -489,29 +559,70 @@
     <!-- ========================================== -->
     <section id="desalination">
         <h2>4. 海水淡化與苦鹹水處理</h2>
-        <p><strong>設計核心：</strong> 克服高滲透壓。標準海水 (TDS 35,000 ppm) 滲透壓約 25 bar，SWRO 操作壓力需達 55-70 bar:contentReference[oaicite:4]{index=4}。節能是關鍵，必須使用能量回收裝置 (ERD)。</p>
+        <p><strong>設計核心：</strong> 海水淡化要克服高滲透壓與結垢。典型海水 (TDS ≈ 35,000 ppm) 滲透壓約 25 bar，SWRO 操作壓力通常 55–70 bar，需強調預處理與能量回收 (ERD)。</p>
 
-        <h3>4.1 關鍵設備與工程設計 (10+項)</h3>
+        <h3>4.1 關鍵設備與設計 (10+ 項)</h3>
         <ul class="equipment-grid">
-            <li><strong>1. 深海取水頭 (Intake)</strong> <p>設計：流速 &lt; 0.15 m/s，防止吸入魚苗；位置需避開汙染源與溫排水。</p></li>
-            <li><strong>2. 轉鼓篩網 (Drum Screen)</strong> <p>規格：網目 1-3mm，連續旋轉清洗，去除海藻與貝類。</p></li>
-            <li><strong>3. UF 預處理系統</strong> <p>重要性：SWRO 對進水 SDI 要求嚴格 (&lt; 3)，UF 是目前主流預處理技術，優於傳統砂濾。</p></li>
-            <li><strong>4. SWRO 海水膜元件</strong> <p>規格：高脫鹽率 (99.8%)，耐高壓 (1200 psi)，膜面積通常為 400 或 440 $ft^2$。</p></li>
-            <li><strong>5. 高壓柱塞泵/多級離心泵</strong> <p>材質：需採用雙相不鏽鋼 (Duplex SS 2205) 或 超級雙相鋼 (2507) 以耐海水腐蝕。</p></li>
-            <li><strong>6. 能量回收裝置 (ERD)</strong> <p>類型：等壓交換式 (Isobaric)，如 PX (Pressure Exchanger)。效率達 96-98%:contentReference[oaicite:5]{index=5}，是海淡廠心臟。</p></li>
-            <li><strong>7. 增壓泵 (Booster Pump)</strong> <p>用途：補償 ERD 與 RO 膜組之間的壓降 (約 3-5 bar)。</p></li>
-            <li><strong>8. 沖洗水槽 (Suck-back Tank)</strong> <p>功能：停機時利用重力或泵浦注入淡水，置換膜管內的高濃度海水，防止滲透壓造成真空損壞。</p></li>
-            <li><strong>9. 後處理礦化濾床</strong> <p>材料：方解石 ($CaCO_3$)。用途：RO 出水偏酸且無硬度，需溶解鈣質以調整 pH 與口感 (LSI 指數調整)。</p></li>
-            <li><strong>10. 濃排水擴散器 (Outfall Diffuser)</strong> <p>設計：利用噴嘴增加流速，加速濃鹽水與周遭海水混合，減少環境衝擊。</p></li>
+            <li><strong>深海取水頭 / 取水口</strong><p>設計：避免吸入生物，流速低於 0.15 m/s，避開污染與溫排水。</p></li>
+            <li><strong>轉鼓篩 / 篩網</strong><p>用途：去除海藻、貝類與漂浮物 (mesh 1–3 mm)。</p></li>
+            <li><strong>砂濾 / UF 預處理</strong><p>用途：降低 SDI、去除懸浮物，UF 趨勢優於傳統砂濾。</p></li>
+            <li><strong>抗結垢 / 抗生物投加系統</strong><p>用途：antiscalant 與 biocide 以降低膜汙堵與結垢。</p></li>
+            <li><strong>高壓泵 (SWRO)</strong><p>用途：提供約 55–70 bar 操作壓力，材質需耐海水腐蝕。</p></li>
+            <li><strong>SWRO 模組 (膜元素)</strong><p>用途：主體脫鹽單元，設計回收率通常 35–50%。</p></li>
+            <li><strong>能量回收裝置 (ERD / PX)</strong><p>用途：回收濃鹽水壓能，效率可達 90% 以上，顯著降低 kWh/m³。</p></li>
+            <li><strong>增壓泵 / 補壓系統</strong><p>用途：補償壓降並維持系統壓力。</p></li>
+            <li><strong>停機沖洗 / 洗膜系統 (Suck-back)</strong><p>用途：停機時用淡水置換膜元件內濃水，避免膜損壞。</p></li>
+            <li><strong>濃鹽水處置 (Outfall / Evaporation / Injection)</strong><p>用途：依地點選擇擴散排放、蒸發結晶或深井注入。</p></li>
+            <li><strong>後處理礦化 (Mineralization)</strong><p>用途：使用方解石調整 pH 與礦化口感 (飲用用途)。</p></li>
+            <li><strong>在線水質監測 (TDS, pH, Cl)</strong><p>用途：確保出水品質與操作安全。</p></li>
         </ul>
 
         <div class="deep-dive-box">
             <h4>技術深解：能量回收 (ERD) 與硼去除</h4>
-            <p><strong>節能關鍵：</strong> 無 ERD 之舊式海淡廠能耗約 5-8 kWh/m^3；採用高效 ERD (如 PX) 可將能耗降至 ~3.0-3.5 kWh/m^3:contentReference[oaicite:6]{index=6}:contentReference[oaicite:7]{index=7}，直接利用濃鹽水的高壓 (約 55 bar) 傳遞給進水。</p>
-            <p><strong>硼 (Boron) 的挑戰：</strong> 海水中硼濃度約 4-5 ppm。在海水 pH (8.1) 下，硼主要以不帶電的硼酸 ($H_3BO_3$) 形式存在，RO 脫除率較差。若需符合飲用水標準 (&lt; 1.0 ppm) 或灌溉標準，通常需採用二級 RO (2nd Pass) 並在段間調高 pH 值 (pH > 9)，使硼轉為帶電的硼酸根離子 ($H_2BO_3^-$) 以利去除。</p>
-            <div class="back-link">
-                <a href="https://www.chenfa.tw/">回首頁- 辰發企業|專業水處理工程、設備、藥品、配管</a>
-            </div>
+            <p><strong>能量回收：</strong> 使用高效 ERD (等壓回收器) 可將海淡能耗從 5–8 kWh/m³ 降至約 3.0–3.5 kWh/m³（視海水鹽度與回收率而定）。</p>
+            <p><strong>硼 (Boron)：</strong> 海水中硼 ~4–5 ppm，RO 對硼的去除率受 pH 影響；若需飲用標準 (&lt;1 ppm)，通常採二級 RO 並在段間提高 pH 使硼離子化以利去除。</p>
+            <div class="back-link"><a href="https://www.chenfa.tw/">回首頁 - 辰發企業</a></div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. 跨產業設計原理與計算範例 -->
+    <!-- ========================================== -->
+    <section id="design-principles">
+        <h2>5. 跨產業設計原理、計算範例與參考</h2>
+        <h3>常用計算公式</h3>
+        <table class="tech-table">
+            <thead>
+                <tr><th>項目</th><th>公式 / 說明</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>日需水量</td><td><code>V_day = Σ (process_flow_i × operating_hours_i)</code>，加安全係數 1.2–1.5。</td></tr>
+                <tr><td>RO 膜面積</td><td><code>A = Q_perm / J_op</code>（Q_perm L/h，J_op L/m²·h）。</td></tr>
+                <tr><td>泵浦功率</td><td><code>P (kW) = ρ·g·Q·H / (1000·η)</code>，Q m³/s, H m。</td></tr>
+                <tr><td>曝氣氧需求</td><td>以 BOD 負荷與氧利用效率計算，設計鼓風機容量以 kg O₂/d。</td></tr>
+                <tr><td>調節池容量</td><td><code>V_EQ = Q_avg × T_ret</code>，T_ret 常 4–24 小時。</td></tr>
+            </tbody>
+        </table>
+
+        <h3>參考標準與法規</h3>
+        <ul>
+            <li>WHO Drinking-water Guidelines</li>
+            <li>Codex Alimentarius / 衛福部食品法規 / CNS 標準</li>
+            <li>SEMI Standards (UPW)</li>
+            <li>ISO / ASTM / ASME BPE（衛生設備）</li>
+            <li>環保署污水排放標準與地方規範</li>
+        </ul>
+
+        <div class="deep-dive-box">
+            <h4>注意事項（整合）</h4>
+            <ul>
+                <li>所有接觸水部分優先採用食品級或低溶出材料（SUS316L、PTFE、PVDF）。</li>
+                <li>設計注意避免死角、保持可清洗性（CIP / SIP）、並規劃取樣點與稽核紀錄。</li>
+                <li>線上監測參數（電導、TOC、濁度、粒子）應設定 Alert / Action 值並串接 SCADA。</li>
+                <li>關鍵設備採 N+1 備援，並建立維護 SOP 與耗材備援量。</li>
+                <li>法規、標準與客戶需求會影響最終選型，設計前應確認最新法規與工廠內控標準。</li>
+            </ul>
+            <div class="back-link"><a href="https://www.chenfa.tw/">回首頁 - 辰發企業</a></div>
         </div>
     </section>
 
